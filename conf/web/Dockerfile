@@ -40,5 +40,7 @@ RUN docker-php-ext-install pdo_pgsql zip
 RUN a2enmod rewrite
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+# Viteのインストールとプロジェクトのセットアップ
+RUN npm install -g vite
 
 WORKDIR /var/www/html
